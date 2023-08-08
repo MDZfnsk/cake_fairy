@@ -1,0 +1,53 @@
+<!-- <div *ngIf="!user">
+    <h3>Loading........</h3>
+</div> -->
+
+<div class="store-review-container">
+
+
+    <p-card header="Store Reviews" subheader="Reviews left by previous Customers">
+        <div class="grid mb-4">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-end"></div>
+                    <div class="p-toolbar-group-end">
+
+                        <p-button [label]="'Back'" icon="pi pi-arrow-left"
+                            styleClass="mr-2 back-btn" (onClick)="goBackPage()"></p-button>                       
+
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+
+        <div class="reviews-list" *ngIf="storeReviews">
+
+        <p-fieldset [legend]="review.user.name" [toggleable]="true" styleClass="mb-4" *ngFor="let review of storeReviews">
+            <div class="grid">
+
+                <div class="col-4">
+                    <h5>User Name</h5>
+                    <p>{{review.user.email}}</p>
+                </div>
+                <div class="col-4">
+                    <h5>Rating</h5>
+                    <p-rating [(ngModel)]="review.rating" [disabled]="true" [cancel]="false"></p-rating>                                       
+                </div>
+                <div class="col-4">
+                    <h5>Date</h5>
+                   <p>{{review.dateCreated | date}}</p>
+                </div>
+                <div class="col-12">
+                    <h5>Comment</h5>
+                   <p>{{review.comment}}</p>
+                </div>
+            </div>
+        </p-fieldset>
+
+    </div>
+
+
+      
+
+    </p-card>
+</div>

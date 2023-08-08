@@ -1,0 +1,52 @@
+<p-toast></p-toast>
+<!-- <div *ngIf="!user">
+    <h3>Loading........</h3>
+</div> -->
+<div class="deactive-user" *ngIf="!user.isActive">
+    <ui-blok-page></ui-blok-page>
+</div>
+<div class="store-details-page" *ngIf="store && user.isActive">
+    <p-card header="Store Page" subheader="Your store info">
+        <div class="grid store-image">
+            <div class="col-6 col-offset-3 my-div">
+                <img [src]="store.profileImage" alt="">                
+            </div>                           
+        </div>
+
+        <p-fieldset legend="Store Name" [toggleable]="true" styleClass="mb-4">
+            <div class="grid">
+                <div class="col-12">
+                    <h5>Name</h5>
+                    <p>{{store.name}}</p>
+                </div>                           
+            </div>
+        </p-fieldset>
+       
+
+        <p-fieldset legend="Store Description" [toggleable]="true" styleClass="mb-4">
+           <div class="grid">
+            <div class="col-12 ">               
+                <p>{{store.description}}</p>                        
+            </div>                    
+           </div>
+        </p-fieldset>
+
+
+        <p-fieldset legend="Manage Store" [toggleable]="true" styleClass="mb-4">
+            <div class="grid">
+                <div class="col-6 ">                   
+                <p-button icon="pi pi-pencil" styleClass="p-button-success" class="mr-2" (click)="editStore(store.id)"
+                    ></p-button>                                                   
+                </div>
+                <div class="col-6">                  
+                    <p-button icon="pi pi-trash" styleClass="p-button-danger" class="mr-2" (click)="deleteStore(store.id)"
+                    ></p-button>                 
+                </div>           
+               </div>           
+        </p-fieldset>
+
+    </p-card>
+</div>
+
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"
+    rejectButtonStyleClass="p-button-text"></p-confirmDialog>

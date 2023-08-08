@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+<div class="my-orders-list">
+    <div class="deactive-user" *ngIf="!user.isActive">
+        <ui-blok-page></ui-blok-page>
+    </div>
+
+    <p-card header="Orders" subheader="My order history" *ngIf="user.isActive">
+
+
+        <div class="grid">
+
+            <div *ngIf="orders.length === 0">
+                <h3>You don't have any placed Orders...</h3>
+            </div>
+            <div class="col-12" *ngIf="orders.length > 0">
+
+                <p-table [value]="orders" styleClass="p-datatable-gridlines">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="text-center">Image</th>
+                            <th class="text-center">Product Name</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center" pSortableColumn="dateOrdered">Date Ordered<p-sortIcon
+                                    field="dateOrdered"></p-sortIcon></th>
+                            <th class="text-center">Total Price</th>
+                            <th class="text-center">Status</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-order>
+                        <tr>
+                            <td class="text-center col-2"><img [src]="order.product.images[0]" alt=""
+                                    style="width: 100%;"></td>
+                            <td>{{ order.product.name }}</td>
+                            <td>{{ order.quantity }}</td>
+                            <td>{{ order.dateOrdered | date: 'short' }}</td>
+                            <td>{{ order.totalPrice | currency: 'LKR '}}</td>
+                            <td class="text-center"><p-tag [value]="orderStatus[order.status].label"
+                                    [severity]="orderStatus[order.status].color"></p-tag></td>
+                                    
+                            <!-- <td>{{order.status}}</td> -->
+                            <td class="text-center">
+
+                                <!-- <p-button icon="pi pi-trash" class="mr-5" styleClass="p-button-danger"
+                                    (click)="deleteOrder(order._id)"></p-button> -->
+
+                                <p-button icon="pi pi-eye" class="mr-5" styleClass="p-button-success"
+                                (click)="viewOrder(order.id)" ></p-button>
+                            </td>
+
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </p-card>
+</div>
+
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"
+    rejectButtonStyleClass="p-button-text"></p-confirmDialog>

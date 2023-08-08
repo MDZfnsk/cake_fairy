@@ -1,0 +1,34 @@
+//**Order of these imports matter
+@import 'normalize.css/normalize.css';
+@import './base/colors.scss';
+@import './base/fonts.scss';
+@import './base/mixins.scss';
+
+
+
+
+//PrimeNg Libraries
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+@import './base/configuration.scss';
+
+
+
+
+//Pages
+@import './apps/admin/pages/pages.scss';
+
+
+
+// //Shared
+// @import './apps/admin/shared/shell.scss';
+@import './apps/admin/shared/sidebar.scss';
+
+
+//Libs
+@import './libs/admins/admin.scss';
+@import './libs/ui/ui.scss';
+// @import './libs/users/users.scss';

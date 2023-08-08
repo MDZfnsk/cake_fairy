@@ -1,0 +1,30 @@
+<div class="user-sidebar">
+    <div class="logo">
+        <img src="assets/images/fairy-logo.png" alt="">
+    </div>
+    <div class="links">
+        <ul>
+            <li>
+                <a routerLink="/user"><i class="pi pi-home"></i>My Profile</a>
+            </li>
+            <li>
+                <a [routerLink]="['/user/myorders', user?.id]"><i class="pi pi-briefcase"></i>My Purchasing Info</a>
+            </li>
+            <li *ngIf="!isShopOwner && user?.id">
+                <a [routerLink]="['/user/store/form']" [queryParams]="{userId:user.id}"><i class="pi pi-plus"></i>Create Seller Account</a>
+            </li>
+            <li *ngIf="isShopOwner">
+                <a [routerLink]="['/user/store', userStoreId]"><i class="pi pi-list"></i>My Store</a>
+            </li>
+            <li *ngIf="isShopOwner">
+                <a [routerLink]="['/user/store/products', userStoreId]"><i class="pi pi-shopping-cart"></i>My Products</a>
+            </li>
+            <li *ngIf="isShopOwner">
+                <orders-order-icon [storeId]="userStoreId"></orders-order-icon>                
+            </li>             
+            <li>
+                <a class="logout" (click)="logoutUser()"><i class="pi pi-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>

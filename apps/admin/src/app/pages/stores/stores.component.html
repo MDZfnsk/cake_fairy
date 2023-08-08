@@ -1,0 +1,50 @@
+
+<div class="admin-stors-list-page">
+
+
+    <p-card header="Stores" subheader="List of all Stores">
+       
+        <div class="grid">
+
+            <div *ngIf="stores?.length === 0">
+                <h3>Loading....</h3>
+            </div>
+
+            <div class="col-12" *ngIf="stores?.length > 0">
+
+                <p-table [value]="stores" styleClass="p-datatable-gridlines" [paginator]="true" [rows]="5" >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="text-center" pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon>
+                            </th>
+                            <th class="text-center">Image</th>
+                            <th class="text-center" pSortableColumn="price">Owner<p-sortIcon field="price"></p-sortIcon>
+                            </th>
+                            <th class="text-center">All Orders</th>                                  
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-store>
+                        <tr>
+                            <td>{{ store.name }}</td>
+                            <td class="text-center col-2"><div class="img-cell"><img [src]="store.profileImage" alt="" style="width: 100%;"></div></td>
+                            <td class="text-center">{{ store.owner.name }}</td> 
+                            <td class="text-center">{{ getOrderCount(store.id) }}</td>                             
+                            <td class="text-center">
+                               
+                                <p-button icon="pi pi-eye" styleClass="p-button-success" class="mr-2"
+                                (click)="viewStore(store.id)" ></p-button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </p-card>
+
+</div>
+
+
+
+
+    

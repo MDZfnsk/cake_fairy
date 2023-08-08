@@ -1,0 +1,31 @@
+.checkout-page {
+    min-height: 500px;
+    // border: 5px solid red;
+  
+    button {
+      background-color: $primary-color;
+      border: 0;
+    }
+
+   
+  
+    .checkout {
+      &-form {
+        margin-top: 25px;
+      }
+  
+      &-button {
+        margin-top: 20px;
+        button {
+          width: 100%;
+          
+        }
+
+        button:hover {
+          width: 100%;
+          background-color: #c93d82;
+        }
+      }
+    }
+  }
+  

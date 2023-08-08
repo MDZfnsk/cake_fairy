@@ -1,0 +1,41 @@
+<div class="products-page">
+    <div class="grid">
+        <div class="side-banner col-12 lg:col-2" *ngIf="!isCategoryPage">
+            <h4>Categories</h4>
+            <div class="loading" *ngIf="!categories">
+                <p-progressSpinner styleClass="w-4rem h-4rem progress-spinner" strokeWidth="8" fill="var(--surface-ground)"
+                    animationDuration=".5s"></p-progressSpinner>
+                    <p>Categories Loading .....</p>
+            </div>
+            <div class="field-checkbox" *ngFor="let category of categories">
+                <p-checkbox [(ngModel)]="category.checked" [binary]="true" [inputId]="category.id"
+                    (onChange)="categoryFilter()"></p-checkbox>
+                <label for="{{category.id}}">{{category.name}}</label>
+            </div>
+        </div>
+
+
+      
+        <div class="product-items col-12" [ngClass]="{'lg:col-10': !isCategoryPage, 'lg:col-12': isCategoryPage}">
+            <div class="loading" *ngIf="!products">
+              <p-progressSpinner styleClass="w-6rem h-6rem progress-spinner" strokeWidth="8" fill="var(--surface-ground)"
+                                  animationDuration=".5s"></p-progressSpinner>
+              <p>Products Loading .....</p>
+            </div>
+            <div class="grid" *ngIf="products">
+              <div class="col-12 md:col-6 lg:col-3" [ngClass]="{'col-4': !isCategoryPage, 'col-3': isCategoryPage}"
+                   *ngFor="let product of pagedProducts">
+                <products-product-item [product]="product"></products-product-item>
+              </div>
+            </div>
+            <p-paginator [rows]="12" [totalRecords]="products?.length" (onPageChange)="onPageChange($event)"></p-paginator>
+          </div>
+       
+
+
+    </div>
+</div>
+
+
+
+  

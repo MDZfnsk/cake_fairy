@@ -1,0 +1,66 @@
+<p-toast></p-toast>
+<div class="store-form-page">
+
+    <p-card [header]="'Store Review'"
+        [subheader]="'Share your Shopping Experience here..'">
+        <div class="grid mb-4">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-end"></div>
+                    <div class="p-toolbar-group-end">
+
+                        <p-button [label]="'Back'" icon="pi pi-arrow-left"
+                        styleClass="mr-2 back-btn" (onClick)="goBackPage()"></p-button>        
+
+                       
+
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <form [formGroup]="form">
+
+
+                    
+                    <div class="formgrid fluid grid">
+                        <div class="field col-12">
+                            <label for="rating">Store Rating</label>
+                            <br>
+                            <p-rating formControlName="rating" [cancel]="false"></p-rating>  
+                            <small *ngIf="reviewForm.rating.invalid && isSubmitted" class="p-error">Rating is Required</small>                          
+                        </div>                                     
+
+                    </div>
+
+                    <div class="formgrid fluid grid">    
+                                   
+
+                        <div class="field col-12">
+                            <label for="comment">Comment</label>
+                            <br>
+                            <textarea 
+                                rows="5" 
+                                cols="30" 
+                                pInputTextarea 
+                                formControlName="comment"
+                                class="text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                            </textarea>
+                            <small *ngIf="reviewForm.comment.invalid && isSubmitted" class="p-error">Comment is Required</small>
+                        </div>  
+                        
+                        <div class="field col-12">
+                            <div class="place-button">
+                                <p-button label="Place-Review" (onClick)="placeReview()"></p-button>
+                            </div>
+                        </div>
+
+                       
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </p-card>
+</div>

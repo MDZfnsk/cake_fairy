@@ -1,0 +1,23 @@
+.login-register {
+    background-image: linear-gradient(235deg, #565867, #191a25);
+    height: 100vh;
+
+    img {
+      width: 100%;
+      margin-top: 150px;
+    }
+
+    &-panel{
+        width: 650px;
+        height: 525px;
+        background-color: var(--surface-a);
+        position: absolute;
+        left: calc(50% - 325px);
+        margin-top: 50px;
+       
+    
+        .full-btn {
+          width: 100%;
+        }
+    }
+}

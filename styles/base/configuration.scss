@@ -1,0 +1,16 @@
+body,
+.p-component {
+    
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;   
+
+}
+
+a {
+    text-decoration: none;
+}
+
+//Comes from mixin
+ul {
+    @include reset-list;
+}

@@ -1,0 +1,66 @@
+  
+
+.banner {
+    height: 100%;
+    width: 100%;
+    background-color: #d7effb;
+
+    .grid {
+        margin: 0;
+    }
+    
+
+    &-text {
+        color: var(--surface-700);
+        margin-top: 2vh;       
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 400;
+        }
+
+        h2 {
+           
+            margin: 0;
+            padding-left: 40px; 
+            font-family: 'Lobster', cursive;          
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        h3 {
+            margin: 0;
+            font-size: 1.5em;
+            padding-left: 150px;   
+            font-weight: 300;
+        }
+    }
+
+    &-image {
+        padding: 25px 0 0 0;       
+        text-align: center;
+        --animate-duration: 2s;
+
+        img {
+            width: 30%;
+            margin-bottom: 5px;
+           
+        }
+    }
+
+    &-button {
+        background-color: var(--surface-0);
+        color: $primary-color;
+        border: 0;
+        border-radius: 13px;
+        height: 40px;
+
+        &:enabled:hover {
+            background-color: var(--surface-100);
+            color: $primary-color;
+            border: 0;
+        }
+
+
+    }
+}

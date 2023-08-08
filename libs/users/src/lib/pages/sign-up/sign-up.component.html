@@ -1,0 +1,103 @@
+<p-toast></p-toast>
+<div class="signup-page">
+
+    <p-card [header]="'New Account' "
+        [subheader]="'Create New Account here'">
+        <div class="grid mb-4">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-end"></div>
+                    <div class="p-toolbar-group-end">
+                       
+
+                        <p-button label="Cancle" icon="pi pi-arrow-circle-left" styleClass="p-button-secondary mr-2"
+                            (click)="onCancleClick()"></p-button>
+
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <form [formGroup]="form">
+
+                    <div class="fluid formgrid grid">
+                        <div class="field col-4">
+                            <label for="name">Name</label>
+                            <input id="name" type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="name" pInputText>
+                            <small *ngIf="userForm.name.invalid && isSubmitted" class="p-error">Name is
+                                Required</small>
+                        </div>
+                        <div class="field col-4">
+                            <label for="email">Email</label>
+                            <input id="email" type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="email" pInputText >
+                            <small *ngIf="userForm.email.invalid && isSubmitted" class="p-error">
+                                <span *ngIf="userForm.email.errors.required">Email is Required </span>
+                                <span *ngIf="userForm.email.errors.email">Email is Invalid Format </span>
+                            </small>
+                        </div>
+                        <div class="field col-4">
+                            <label for="password">Password</label>
+                            <input id="password" type="password"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="password" pInputText>
+                            <small *ngIf="userForm.password.invalid && isSubmitted" class="p-error">Password is
+                                Required</small>
+                        </div>                      
+                    </div>
+
+                    <div class="fluid formgrid grid">
+                        <div class="field col-4">
+                            <label for="phone">Phone</label>
+                            <p-inputMask
+                                styleClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                mask="999999999" formControlName="phone" placeholder="079 999-9999"></p-inputMask>
+                            <small *ngIf="userForm.phone.invalid && isSubmitted" class="p-error">Phone Number is
+                                Required</small>
+                        </div>
+                        <div class="field col-4">
+                            <label for="street">Street</label>
+                            <input id="street" type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="street" pInputText>
+                        </div>
+                        <div class="field col-4">
+                            <label for="apartment">Apartment</label>
+                            <input id="apartment" type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="apartment" pInputText>
+                        </div>
+                        <div class="field col-4">
+                            <label for="zip">Zip Code</label>
+                            <input id="zip" type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="zip" pInputText>
+                        </div>
+                        <div class="field col-4">
+                            <label for="city">City</label>
+                            <input id="city" type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="city" pInputText>
+                        </div>
+                        <div class="field col-4">
+                            <label for="district">District</label>
+                            <input id="district" type="text"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                            formControlName="district" pInputText>                                                           
+                        </div>
+                    </div>
+                    <div class="fluid formgrid grid">
+                        <div class="field col-4 col-offset-4 sign-up-button">
+                            <p-button [label]="'Create Account'" icon="pi pi-plus"
+                            styleClass="p-button-primary mr-2 btn" (click)="onSubmit()"></p-button>
+                            </div>
+                            </div>
+                </form>
+            </div>
+        </div>
+    </p-card>
+</div>

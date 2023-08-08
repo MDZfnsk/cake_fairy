@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cakefairy/admins": ["libs/admins/src/index.ts"],
+      "@cakefairy/orders": ["libs/orders/src/index.ts"],
+      "@cakefairy/products": ["libs/products/src/index.ts"],
+      "@cakefairy/stores": ["libs/stores/src/index.ts"],
+      "@cakefairy/ui": ["libs/ui/src/index.ts"],
+      "@cakefairy/users": ["libs/users/src/index.ts"],
+      "@env/*": ["environments/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

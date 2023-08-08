@@ -1,0 +1,54 @@
+<div class="admin-store-details" *ngIf="store">
+    <p-card header="Store Page" subheader="Store info">
+        <div class="grid">
+            <div class="col-6 col-offset-4 store-image">
+                <img [src]="store.profileImage" alt="">                
+            </div>                           
+        </div>
+
+        <p-fieldset legend="Store Name" [toggleable]="true" styleClass="mb-4">
+            <div class="grid">
+                <div class="col-12">
+                    <h5>Name</h5>
+                    <p>{{store.name}}</p>
+                </div>                           
+            </div>
+        </p-fieldset>
+       
+
+        <p-fieldset legend="Store Description" [toggleable]="true" styleClass="mb-4">
+           <div class="grid">
+            <div class="col-12 ">               
+                <p>{{store.description}}</p>                        
+            </div>                    
+           </div>
+        </p-fieldset>
+
+
+        <p-fieldset legend="Owner Info" [toggleable]="true" styleClass="mb-4" *ngIf="user">
+            <div class="grid">
+                <div class="col-3"> 
+                    <h5>Name</h5>
+                    <p>{{user.name}}</p>                                                             
+                </div>
+                <div class="col-3"> 
+                    <h5>Email</h5>
+                    <p>{{user.email}}</p>                                                             
+                </div>
+                <div class="col-3"> 
+                    <h5>Phone</h5>
+                    <p>{{user.phone}}</p>                                                             
+                </div>
+                <div class="col-3"> 
+                    <h5>Address</h5>
+                    <p>{{user.apartment}}</p> 
+                    <p>{{user.street}}</p>
+                    <p>{{user.city}}</p>
+                    <p>{{user.zip}}</p>                                                               
+                </div>
+               </div>           
+        </p-fieldset>
+
+    </p-card>
+</div>
+

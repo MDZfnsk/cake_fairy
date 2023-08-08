@@ -1,0 +1,105 @@
+
+.p-rating .pi-star-fill {
+  color: $primary-color !important;
+ 
+}
+
+
+
+.loading {
+  margin-top: 50px;                
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-page {
+  padding: 20px;
+
+
+  .product-store{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5rem;
+    color: #0FAAB1;
+  }
+
+
+  .product {
+    &-name {
+      font-size: 2em;
+    }
+
+    &-desc {
+      font-size: 1.3rem;
+      text-align: justify;
+    }
+
+    &-rating {
+      margin: 15px 0;
+    }
+
+    .rev-tag{
+      background-color: #E63DF4 ;
+    }
+
+  
+
+    .rev-tag:hover{
+      background-color: #B506C4;
+    }
+
+    p-tag:hover{
+      cursor: pointer;     
+    }
+
+    .pi-users{
+      font-size: 1.3rem; 
+      color: dimgray;
+     
+    }
+
+    &-price {
+      font-size: 2em;
+      font-weight: 600;
+      border-bottom: 1px solid var(--surface-300);
+      padding: 25px 0;
+
+      .price-before {
+        font-size: 0.7em;
+        margin-left: 10px;
+        font-weight: 200;
+        color: var(--surface-500);
+        text-decoration: line-through;
+      }
+    }
+
+    &-quantity {
+      margin: 25px 0;
+
+      label {
+        font-size: 1.2em;
+      }
+
+      .p-button {
+        background-color: $primary-color;
+        border: 0;
+      }
+    }
+
+    &-actions {
+      .p-button {
+        background-color: $primary-color;
+        border: 0;
+      }
+    }
+  }
+
+  .product-rich-desc {
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #F9EBF4;
+    border-radius: 5px;
+    margin-top: 100px;
+  }
+
+}

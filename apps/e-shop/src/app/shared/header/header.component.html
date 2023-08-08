@@ -1,0 +1,15 @@
+<div class="card">
+    <p-menubar [model]="items">
+        <ng-template pTemplate="start">
+            <img src="assets/images/Picture2.png" height="50" class="main-logo" routerLink='/'/>
+        </ng-template>
+        <ng-template pTemplate="end" class="products-search">
+            <input type="text" [(ngModel)]="searchInputValue" placeholder="Find Products" class="products-search-input" name="search" id="search" />
+            <a (click)="onSearchClicked()"><i class="pi pi-search" style="color: #FE17AE; font-size: 1.3rem;  margin-right: 5vw;"></i></a> 
+            <orders-cart-icon></orders-cart-icon>           
+            <i class="pi pi-user user-icon"  routerLink='/user' style="font-size: 1.3rem; margin-right: 3vw;"></i>
+            <a *ngIf="!user" routerLink='/signup'>Sign Up</a>
+            <a *ngIf="user">{{user.name}}</a>
+        </ng-template>
+    </p-menubar>
+</div>

@@ -1,0 +1,27 @@
+.user-details-page{
+
+    .img-coloumn{
+        width: 400px;
+        height: 250px;
+
+        img{
+            width: 100%;
+            height: 100%;           
+            object-fit: contain; 
+        }
+    }
+
+
+
+   
+}
+
+.confirm-dialog-accept{    
+    background-color: #F54141;
+    border: 0;     
+}
+
+.confirm-dialog-accept:enabled:hover{    
+    background-color: #D50909;     
+}
+

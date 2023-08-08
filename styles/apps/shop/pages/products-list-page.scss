@@ -1,0 +1,27 @@
+.products-page {
+
+    .grid {
+
+
+        .side-banner {
+            margin-top: 5px;
+            padding-left: 20px;
+            
+        }
+
+
+        .product-items {
+            margin-top: 5px;           
+            padding: 0 20px;             
+
+            .loading {
+                margin-top: 50px;                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+          
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.user-sidebar {    
+    background-color: #B8B8B8 ;    
+    height: 100%;
+   
+    
+    
+    .logo {
+        display: flex;
+          justify-content: center; 
+          align-items: center; 
+        img{
+            width: 100%;
+            @media only screen and (max-width: 767px) {
+                width: 60%;
+            }
+
+           
+        }
+    }
+
+    .links {
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: block;
+                list-style: none;
+                width: 100%;
+
+                a {
+                    color: #5B595B ;
+                    padding: 10px 15px;
+                    display: block;
+                    width: 100%;
+
+                    &:hover {
+                        background-color: #EFBEE1 ;
+                        cursor: pointer;
+                    }
+
+                    i {
+                        margin-right: 8px;
+                        margin-top: 0;
+                        float: left;
+                    }
+
+                    &.logout {
+                        color: #C6048E ;                           
+                    }
+
+                }
+
+
+            }
+        }
+    }
+}
+

@@ -1,0 +1,76 @@
+<p-toast></p-toast>
+<div *ngIf="!user">
+    <h3>Loading........</h3>
+</div>
+
+<div class="main-user-profile-container" *ngIf="user">
+    <div class="deactive-user" *ngIf="!user.isActive">
+        <ui-blok-page></ui-blok-page>
+    </div>
+    <div class="user-details-page" *ngIf="user.isActive">
+        <p-card header="User Profile " subheader="Your info">
+    
+            <p-fieldset legend="General Info" [toggleable]="true" styleClass="mb-4">
+                <div class="grid">
+    
+                    <div class="col-4">
+                        <h5>Name</h5>
+                        <p>{{user.name}}</p>
+                    </div>
+                    <div class="col-4">
+                        <h5>Email</h5>
+                        <p>{{user.email}}</p>
+                    </div>
+                    <div class="col-4">
+                        <h5>User Role</h5> 
+                        <p-button *ngIf="user.isSeller" label="Seller" styleClass="p-button-success"></p-button>
+                                <p-button *ngIf="!user.isSeller" label="Buyer" styleClass="p-button-warning"></p-button> 
+                                    
+                    </div>               
+                </div>
+            </p-fieldset>
+           
+    
+            <p-fieldset legend="Contact Details" [toggleable]="true" styleClass="mb-4">
+               <div class="grid">
+                <div class="col-4 ">
+                    <h5>Address</h5> 
+                    <p>{{user.apartment}}</p>
+                    <p>{{user.street}}</p>
+                    <p>{{user.city}}</p>
+                    <p>{{user.zip}}</p>                       
+                </div>
+                <div class="col-4 ">
+                    <h5>District</h5> 
+                    <p>{{user.district}}</p>                                   
+                </div>
+                <div class="col-4">
+                    <h5>Phone</h5>
+                    <p>{{user.phone}}</p>
+    
+                </div>           
+               </div>
+            </p-fieldset>
+    
+    
+            <p-fieldset legend="Manage Profile" [toggleable]="true" styleClass="mb-4">
+                <div class="grid">
+                    <div class="col-6 ">                   
+                    <p-button icon="pi pi-pencil" styleClass="p-button-success" class="mr-2"
+                        (click)="updateUser(user.id)"></p-button>                                                   
+                    </div>
+                    <div class="col-6">                  
+                        <p-button icon="pi pi-trash" styleClass="p-button-danger" class="mr-2"
+                        (click)="deleteUser(user.id)"></p-button>                 
+                    </div>           
+                   </div>           
+            </p-fieldset>
+    
+        </p-card>
+    </div>
+
+</div>
+
+
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"
+    rejectButtonStyleClass="p-button-text"></p-confirmDialog>

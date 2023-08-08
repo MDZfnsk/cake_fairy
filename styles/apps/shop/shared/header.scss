@@ -1,0 +1,63 @@
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
+    background: #f38ec0;
+}
+
+.pi-user:hover {
+    cursor: pointer;
+    color: #a5326b;
+}
+
+.pi-search:hover{
+    cursor: pointer;
+    color: #a5326b;
+}
+
+.main-logo{    
+    width: 100%;   
+    cursor: pointer;
+}
+
+
+
+.p-menubar{      
+    background-color: rgba(223, 14, 151,0.2);
+
+    .p-menuitem{
+        margin-left: 10px;      
+    }
+
+    
+  }
+    
+.products-search {
+    display: flex;    
+    border-radius: 10px; 
+   
+
+    .pi{        
+        margin-top: 10px;
+        margin-right: 50px;        
+       
+    } 
+
+   
+    
+   
+
+  
+    &-input {
+        height: 35px;
+        background-color: white;      
+        border-radius: 10px;
+        border: 0;                  
+        color: #f06bac;
+        padding-left: 10px;      
+        margin-right: 10px;
+        &:focus,
+        &:active {
+            border: 0;
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<div class="admin-sidebar">
+    <div class="logo">
+        <img src="assets/admin.png" alt="">
+    </div>
+    <div class="links">
+        <ul>
+            <li>
+                <a routerLink="/"><i class="pi pi-home"></i>Dashboard</a>
+            </li>
+            <li>
+                <a routerLink="/adminusers"><i class="pi pi-users"></i>Users</a>
+            </li>
+            <li>
+                <a routerLink="/adminstores"><i class="pi pi-shopping-cart"></i>Stores</a>
+            </li>
+            <li>
+                <a routerLink="/adminproducts"><i class="pi pi-briefcase"></i>Products</a>
+            </li> 
+           
+            <li>
+                <a href="https://dashboard.stripe.com/test/payments" target="_blank">
+                    <i class="pi pi-dollar"></i>Payments
+                </a>
+            </li>
+            
+            <li>
+                <a class="logout" (click)="logoutUser()"><i class="pi pi-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="admin-products-details" *ngIf="product">
+    <p-card header="Product Page" subheader="Product info">
+        <div class="grid">
+            <div class="col-3 admin-product-image" *ngFor="let image of product.images">
+                <img [src]="image" alt="">
+            </div>
+        </div>
+
+        <p-fieldset legend="Product Info" [toggleable]="true" styleClass="mb-4">
+            <div class="grid">
+                <div class="col-4">
+                    <h5>Name</h5>
+                    <p>{{product.name}}</p>
+                </div>
+                <div class="col-4">
+                    <h5>Price</h5>
+                    <p>{{product.price | currency: 'LKR '}}</p>
+                </div>
+                <div class="col-4">
+                    <h5>Category</h5>
+                    <p>{{product.category.name}}</p>
+                </div>
+            </div>
+        </p-fieldset>
+
+
+        <p-fieldset legend="Store Info" [toggleable]="true" styleClass="mb-4">
+            <div class="grid">
+                <div class="col-6 ">
+                    <h5>Store Name</h5>
+                    <p>{{product.store.name}}</p>
+                </div>
+            </div>
+        </p-fieldset>
+
+
+        <!-- <p-fieldset legend="Owner Info" [toggleable]="true" styleClass="mb-4" *ngIf="user">
+            <div class="grid">
+                <div class="col-3"> 
+                    <h5>Name</h5>
+                    <p>{{user.name}}</p>                                                             
+                </div>
+                <div class="col-3"> 
+                    <h5>Email</h5>
+                    <p>{{user.email}}</p>                                                             
+                </div>
+                <div class="col-3"> 
+                    <h5>Phone</h5>
+                    <p>{{user.phone}}</p>                                                             
+                </div>
+                <div class="col-3"> 
+                    <h5>Address</h5>
+                    <p>{{user.apartment}}</p> 
+                    <p>{{user.street}}</p>
+                    <p>{{user.city}}</p>
+                    <p>{{user.zip}}</p>                                                               
+                </div>
+               </div>           
+        </p-fieldset> -->
+
+    </p-card>
+</div>
